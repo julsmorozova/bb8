@@ -7,7 +7,7 @@ function controlAnimation() {
   var elements = args.slice(0, -1);
   var animationSetting = args[args.length - 1];
   elements.forEach(function(elem) {
-    if (animationSetting !== 'stop') {
+    if (animationSetting && animationSetting !== 'stop') {
       if (animationSetting === 'right') {
         elem.classList.add('move-right');
       }
@@ -30,6 +30,8 @@ function parseKeyCode(e) {
     case 37:
       result = 'left';
       break;
+    default:
+      return;
   }
   return result;
 }
