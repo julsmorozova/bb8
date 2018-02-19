@@ -5,6 +5,10 @@ BB-8
 BB-8 CSS animation, controlled by keyboard.
 BB-8 is made with pure CSS (Scss).
 ```
+![BB-8](https://github.com/julsmorozova/bb8/blob/master/bb8_in_action.png)
+
+You can also see animation in action here:
+https://codepen.io/julsmorozova/full/yvpEgG/
 
 # Preparations before installation
 
