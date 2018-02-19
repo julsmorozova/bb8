@@ -22,7 +22,15 @@
       @include circle($width: $sphere-width * 0.068);
       margin: 0.4rem auto 0.5rem;
       background-color: $gray;
+      left: 0;
       box-shadow: 0 0 0 0.5rem $black, 0 0 0 0.675rem $shadow-gray, 0 0 0 0.875rem $white;
+      transition: 0.3s ease-in;
+      .move-right & {
+        left: 20%;
+      }
+      .move-left & {
+        left: -20%;
+      }
       .eye-inner.circle {
         @include circle($width: $sphere-width * 0.081);
         @include absolutePosition($top: 50%, $left: 50%);
@@ -34,15 +42,30 @@
       @include circle($width: $sphere-width * 0.05);
       float: right;
       left: $sphere-width * (-0.125);
-      top: -0.3rem;
+      top: -0.5rem;
       background-color: $black;
       box-shadow: 0 0 0 0.0815rem $white, 0 0 0 0.2rem $shadow-gray;
+      transition: 0.3s ease-in;
+      .move-right & {
+        left: -6%;
+      }
+      .move-left & {
+        left: -44%;
+      }
     }
     .bottom-row-details {
-      width: 100%;
+      width: 120%;
       display: flex;
       position: relative;
       top: -0.175rem;
+      left: -16%;
+      transition: 0.3s ease-in;
+      .move-right & {
+        left: 5%;
+      }
+      .move-left & {
+        left: -35%;
+      }
       .rect {
         background-color: $orange;
         border: 0.0625rem solid $gray;
