@@ -1,0 +1,139 @@
+.bb8 {
+  position: relative;
+  display: flex;
+  padding-left: 2rem;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  min-height: 16.5rem;
+}
+
+.top-part {
+  position: relative;
+  z-index: 10;
+  &.move-right {
+    @include bouncing-animation($name: bounceRight);
+    animation: bounceRight 2s ease-out infinite;
+  }
+  &.move-left {
+    @include bouncing-animation($name: bounceLeft);
+    animation: bounceLeft 2s ease-out infinite;
+  }
+}
+
+.antenna {
+  @include absolutePosition($top: -1.5rem, $left: $sphere-width * 0.282);
+  width: 0.125rem;
+  &.short {
+    height: 2rem;
+    width: 0.2rem;
+    background-color: $dark-gray;
+  }
+  &.long {
+    left: $sphere-width * 0.344;
+    top: $sphere-width * (-0.175);
+    height: $sphere-width * 0.219;
+    background-color: $shadow-gray;
+  }
+}
+
+.sphere {
+  @include circle($width: $sphere-width);
+  display: flex;
+  flex-wrap: wrap;
+  transform: rotate(10deg);
+  border: $main-border;
+  overflow: hidden;
+  box-shadow: inset 0 0 2rem 0.6rem $light-shadow-gray;
+  &.move-right {
+    animation: rollRight 1.5s linear infinite;
+  }
+  &.move-left {
+    animation: rollLeft 1.5s linear infinite;
+  }
+}
+
+.part {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  &.left {
+    border-right: $main-border;
+  }
+  &.top {
+    border-bottom: $main-border;
+  }
+  &:before, &:after {
+    position: absolute;
+    content: "\25CB";
+    color: $dark-gray;
+  }
+  &.top.left:before {
+    bottom: 55%;
+    right: 18%;
+  }
+  &.top.left:after {
+    bottom: 18%;
+    right: 55%;
+  }
+  &.top.right:before {
+    bottom: 55%;
+    left: 18%;
+  }
+  &.top.right:after {
+    bottom: 18%;
+    left: 55%;
+  }
+  &.bottom.left:before {
+    top: 55%;
+    right: 18%;
+  }
+  &.bottom.left:after {
+    top: 18%;
+    right: 55%;
+  }
+  &.bottom.right:before {
+    top: 55%;
+    left: 18%;
+  }
+  &.bottom.right:after {
+    top: 18%;
+    left: 55%;
+  }
+}
+
+.center {
+  @include absolutePosition($top: 24%, $left: 24%);
+  border: 0.5125rem solid $orange;
+  background-color: $white;
+  border-radius: 50%;
+  color: $gray;
+  i {
+    font-size: $sphere-width * 0.438;
+  }
+}
+
+.semi-circle {
+  height: $sphere-width * 0.438;
+  width: $sphere-width * 0.438;
+  border-radius: 50%;
+  border: 0.175rem solid $orange;
+  position: absolute;
+  background-color: $white;
+  &.top {
+    top: -30%;
+    left: 27%;
+  }
+  &.right {
+    top: 28%;
+    left: 85%;
+  }
+  &.bottom {
+    top: 85%;
+    left: 27%;
+  }
+  &.left {
+    top: 28%;
+    left: -30%;
+  }
+}

@@ -1,0 +1,88 @@
+.head {
+  position: relative;
+  top: 0.5rem;
+  width: $sphere-width * 0.563;
+  height: $sphere-width * 0.313;
+  overflow: hidden;
+  border-bottom: $main-border;
+  .head-circle {
+    @include circle($width: $sphere-width * 0.563);
+    height: $sphere-width * 0.625;
+    overflow: hidden;
+    border: $main-border;
+    box-shadow: inset 0 0 1rem 0.2rem $light-shadow-gray;
+    .head-top-lines {
+      margin-top: 0.4rem;
+      height: 0.85rem;
+      width: 100%;
+      border-top: 0.4rem solid $dark-gray;
+      border-bottom: 0.25rem solid $orange;
+    }
+    .eye-circle {
+      @include circle($width: $sphere-width * 0.068);
+      margin: 0.4rem auto 0.5rem;
+      background-color: $gray;
+      box-shadow: 0 0 0 0.5rem $black, 0 0 0 0.675rem $shadow-gray, 0 0 0 0.875rem $white;
+      .eye-inner.circle {
+        @include circle($width: $sphere-width * 0.081);
+        @include absolutePosition($top: 50%, $left: 50%);
+        background-color: $black;
+        margin: -0.45rem 0 0 -0.65rem;
+      }
+    }
+    .right-circle {
+      @include circle($width: $sphere-width * 0.05);
+      float: right;
+      left: $sphere-width * (-0.125);
+      top: -0.3rem;
+      background-color: $black;
+      box-shadow: 0 0 0 0.0815rem $white, 0 0 0 0.2rem $shadow-gray;
+    }
+    .bottom-row-details {
+      width: 100%;
+      display: flex;
+      position: relative;
+      top: -0.175rem;
+      .rect {
+        background-color: $orange;
+        border: 0.0625rem solid $gray;
+        height: 0.8rem;
+        margin-right: 0.4rem;
+        &.narrow {
+          width: 0.4rem;
+        }
+        &.wide {
+          width: 1.3rem;
+        }
+        &.short {
+          height: 0.5rem;
+          width: 0.5rem;
+          margin-left: 1.2rem;
+          display: flex;
+          align-self: flex-end;
+        }
+      }
+      .small.circle {
+        @include circle($width: 0.3rem);
+        margin: 0.2rem 1rem 0;
+        box-shadow: 0 0 0 2px $gray, 0 0 0 3px $white, 0 0 0 5px $gray;
+      }
+    }
+  }
+}
+
+.head-bottom {
+  position: relative;
+  top: 0.5rem;
+  width: $sphere-width * 0.563;
+  height: $sphere-width * 0.075;
+  overflow: hidden;
+  z-index: 10;
+  .head-bottom-inner {
+    @include absolutePosition($top: -440%, $left: -2.5%);
+    width: $sphere-width * 0.594;
+    height: $sphere-width * 0.5;
+    border-radius: 50%;
+    background-color: $dark-gray;
+  }
+}

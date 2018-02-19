@@ -1,0 +1,73 @@
+@media (max-height: 500px) {
+  $sphere-width: 12rem; //I wish it could be resolved with just this one line
+  .sphere {
+    width: $sphere-width;
+    height: $sphere-width;
+  }
+  .center {
+    i {
+      font-size: $sphere-width * 0.438;
+    }
+  }
+  .semi-circle {
+    height: $sphere-width * 0.438;
+    width: $sphere-width * 0.438;
+  }
+  .head {
+    width: $sphere-width * 0.563;
+    height: $sphere-width * 0.313;
+    .head-circle {
+      width: $sphere-width * 0.563;
+      height: $sphere-width * 0.625;
+      .eye-circle {
+        width: $sphere-width * 0.068;
+        height: $sphere-width * 0.068;
+        margin: 0 auto 0.5rem;
+        .eye-inner.circle {
+          width: $sphere-width * 0.081;
+          height: $sphere-width * 0.081;
+        }
+      }
+      .right-circle {
+        width: $sphere-width * 0.05;
+        height: $sphere-width * 0.05;
+        left: $sphere-width * (-0.125);
+      }
+      .bottom-row-details {
+        .small.circle {
+          height: 0.2rem;
+          margin: 0.1rem 1rem 0;
+          box-shadow: 0 0 0 2px $gray;
+        }
+      }
+    }
+  }
+  .head-bottom {
+    width: $sphere-width * 0.563;
+    height: $sphere-width * 0.075;
+    .head-bottom-inner {
+      width: $sphere-width * 0.594;
+      height: $sphere-width * 0.5;
+    }
+  }
+  .antenna {
+    &.short {
+      left: $sphere-width * 0.282;
+    }
+    &.long {
+      left: $sphere-width * 0.344;
+      top: $sphere-width * (-0.165);
+      height: $sphere-width * 0.219;
+    }
+  }
+  .hints {
+    width: 30%;
+    .hint-text {
+      font-size: 1.3rem;
+    }
+    i {
+      margin: 0.5rem 5%;
+      font-size: 1.5rem;
+    }
+  }
+}

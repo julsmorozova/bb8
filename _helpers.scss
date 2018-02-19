@@ -1,0 +1,56 @@
+@function calcValue($name, $value) {
+  @if $name == bounceLeft { @return $value; }
+  @return 0 - $value;
+}
+@mixin bouncing-animation($name) {
+  @at-root {
+    @keyframes #{$name} {
+      0%, 100% { top: -0.3rem; transform: rotate(0deg); left: 0;}
+      20% { top: 0.7rem; transform: rotate(calcValue($name, $value: 11deg)); left: calcValue($name, $value: 2rem); }
+    	50% { top: 0.7rem; transform: rotate(calcValue($name, $value: 15deg)); left: calcValue($name, $value: 3rem); }
+      70% { top: 0.7rem; transform: rotate(calcValue($name, $value: 11deg)); left: calcValue($name, $value: 2rem); }
+      90% { top: 0.5rem; transform: rotate(calcValue($name, $value: 6deg)); left: calcValue($name, $value: 0.5rem); }
+    }
+  }
+}
+
+@keyframes moveLeft {
+	0% { background-position: 0 0; }
+  100% { background-position: 5rem 5rem; }
+}
+@keyframes moveRight {
+	0% { background-position: 5rem 5rem; }
+  100% { background-position: 0 0; }
+}
+
+@keyframes rollRight {
+  from { transform: rotate(10deg); }
+  to { transform: rotate(370deg); }
+}
+@keyframes rollLeft {
+  from { transform: rotate(10deg); }
+  to { transform: rotate(-350deg); }
+}
+
+@mixin circle($width) {
+  border-radius: 50%;
+  position: relative;
+  width: $width;
+  height: $width;
+}
+
+@mixin absolutePosition($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+$orange: #e88250;
+$gray: #cccccc;
+$dark-gray: #b1b1b1;
+$shadow-gray: #858585;
+$light-shadow-gray: #dcdcdc;
+$white: #ffffff;
+$black: #000000;
+$main-border: 0.175rem solid $gray;
+$sphere-width: 16rem;
